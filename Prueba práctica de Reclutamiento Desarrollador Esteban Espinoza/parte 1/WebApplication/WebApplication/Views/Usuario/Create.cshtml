@@ -1,0 +1,100 @@
+﻿@model WebApplication.Models.Usuario
+
+<h4 class="center-align">Formulario de Registro</h4>
+<hr />
+
+<div class="row">
+    <div>
+        <form class="col s12" asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="col m6">
+                    <p>
+                        <label>
+                            <input name="group1" type="radio" checked value="0" asp-for="TipoIdentificacion" />
+                            <span>Nacional</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="group1" type="radio" value="1" asp-for="TipoIdentificacion" />
+                            <span>Extrangero</span>
+                        </label>
+                    </p>
+                    <div class="input-field col m12">
+                        <i class="material-icons prefix">note</i>
+                        <input asp-for="Cedula" type="text" class="validate">
+                        <span asp-validation-for="Cedula"></span>
+                        <label asp-for="Cedula">Identificación</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">portrait</i>
+                            <input asp-for="NombreCompleto" type="text" class="validate">
+                            <label asp-for="NombreCompleto">Nombre Completo</label>
+                            <span asp-validation-for="NombreCompleto"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input asp-for="NombreUsaurio" type="text" class="validate">
+                            <label asp-for="NombreUsaurio">Nombre Usuario</label>
+                            <span asp-validation-for="NombreUsaurio"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6">
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">local_post_office</i>
+                            <input asp-for="CorreoElectronico" type="email" class="validate">
+                            <span asp-validation-for="CorreoElectronico"></span>
+                            <label asp-for="CorreoElectronico">Correo Electrónico</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">lock</i>
+                            <input asp-for="Password" type="password" class="validate">
+                            <span asp-validation-for="Password"></span>
+                            <label asp-for="Password">Contraseña</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">lock</i>
+                            <input for="ConfirmarContraseña" type="password" class="validate">
+                            <span validation-for="ConfirmarContraseña"></span>
+                            <label for="ConfirmarContraseña">Confirmar Contraseña</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m12">
+                            <i class="material-icons prefix">call</i>
+                            <input for="Telefono" type="number" class="validate">
+                            <span validation-for="Telefono"></span>
+                            <label for="Telefono">Agregar Teléfono</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s6 m6">
+                    <button class="btn waves-effect waves-light cyan accent-4" type="submit" name="action"
+                            value="Create">
+                        Grabar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                <div class="col s6 m6">
+                    <a asp-action="Index" class="waves-effect waves-light btn grey darken-4">
+                        <i class="material-icons left">undo</i>Volver
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
